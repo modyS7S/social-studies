@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101b36">
+<title>دراسات | تانية إعدادي</title>
+<style>
+:root{--bg:#0b1224;--panel:#121f3b;--panel2:#18294b;--ink:#f4f7ff;--muted:#b7c4df;--gold:#ffd166;--cyan:#55d6d0;--line:#2b3d61;--ok:#7ce0a3;--bad:#ff8c9a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#1a315a 0,transparent 35%),var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.85}
+header{padding:24px max(5vw,18px) 18px;border-bottom:1px solid var(--line);background:#0b1224dd;position:sticky;top:0;z-index:5;backdrop-filter:blur(14px)}
+.top{max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,var(--gold),#f59e0b);color:#17213a;display:grid;place-items:center;font-size:25px;font-weight:bold}.brand h1{font-size:22px;margin:0}.brand small{color:var(--muted)}button,.btn{border:0;border-radius:12px;padding:11px 16px;background:var(--gold);color:#1b2742;font-weight:bold;cursor:pointer;font-size:14px}button:hover,.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.ghost{background:var(--panel2);color:var(--ink);border:1px solid var(--line)}
+main{max-width:1120px;margin:auto;padding:28px 18px 70px}.hero{padding:30px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(120deg,#17294b,#13203c);display:grid;grid-template-columns:1.4fr .6fr;gap:20px;align-items:center}.eyebrow{color:var(--gold);font-weight:bold}.hero h2{font-size:clamp(26px,4vw,42px);line-height:1.35;margin:8px 0}.hero p{color:var(--muted);max-width:650px}.globe{font-size:100px;text-align:center;filter:drop-shadow(0 10px 20px #0006)}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.stat{background:#0c1830;border:1px solid var(--line);padding:8px 13px;border-radius:12px;color:var(--muted)}.stat b{color:var(--gold)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:25px 0}.toolbar input{flex:1;min-width:190px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;color:var(--ink);font:inherit}
+.unit{margin:28px 0}.unit-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.unit-head h2{font-size:23px;margin:0}.tag{color:var(--gold);font-size:13px;background:#ffd16618;padding:5px 10px;border-radius:99px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.lesson{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:19px;transition:.2s}.lesson:hover{border-color:var(--cyan);transform:translateY(-3px)}.lesson .num{color:var(--cyan);font-size:13px}.lesson h3{margin:5px 0 8px;font-size:19px}.lesson p{color:var(--muted);margin:0 0 13px}.lesson button{width:100%}
+#reader{display:none;margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;scroll-margin-top:110px}.reader-head{display:flex;justify-content:space-between;align-items:start;gap:12px}.reader-head h2{margin:0 0 12px}.content h3{color:var(--gold);margin-top:24px}.content ul{padding-right:22px}.note{border-right:4px solid var(--cyan);background:#55d6d012;padding:12px 16px;border-radius:10px;color:var(--muted)}.quiz{margin-top:24px;padding:18px;background:#0c1830;border:1px solid var(--line);border-radius:16px}.question{margin:8px 0 14px;font-weight:bold}.answers{display:grid;grid-template-columns:1fr 1fr;gap:9px}.answers button{background:var(--panel2);color:var(--ink);border:1px solid var(--line);text-align:right}.answers button.correct{border-color:var(--ok);background:#7ce0a322}.answers button.wrong{border-color:var(--bad);background:#ff8c9a22}.feedback{min-height:30px;color:var(--muted);margin-top:10px}.progress-wrap{height:9px;background:#263755;border-radius:9px;overflow:hidden;margin-top:12px}.progress{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--gold));transition:.3s}
+footer{text-align:center;color:var(--muted);padding:25px;border-top:1px solid var(--line)}.empty{display:none;color:var(--muted);padding:15px}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.globe{display:none}.cards{grid-template-columns:1fr}.hero{padding:22px}.reader-head{display:block}.reader-head button{margin-bottom:12px}.answers{grid-template-columns:1fr}.top{align-items:flex-start}.brand h1{font-size:18px}}
+
+/* Motion design: soft cosmic glow, floating details, and scroll reveals */
+body{background-size:180% 180%;animation:ambientDrift 22s ease-in-out infinite}
+@keyframes ambientDrift{0%,100%{background-position:0% 0%}50%{background-position:100% 70%}}
+header{transition:background .35s ease,box-shadow .35s ease}
+header:after{content:"";display:block;position:absolute;bottom:-1px;right:0;height:2px;width:100%;background:linear-gradient(90deg,transparent,var(--cyan),var(--gold),transparent);background-size:200% 100%;animation:lineSweep 7s linear infinite}
+@keyframes lineSweep{to{background-position:200% 0}}
+.logo{animation:logoPulse 4s ease-in-out infinite;box-shadow:0 0 0 0 #ffd16644}
+@keyframes logoPulse{0%,100%{transform:translateY(0) rotate(0);box-shadow:0 0 0 0 #ffd16633}50%{transform:translateY(-4px) rotate(4deg);box-shadow:0 0 0 9px #ffd16600}}
+.hero{position:relative;overflow:hidden;isolation:isolate;animation:heroArrive .9s cubic-bezier(.2,.8,.2,1) both}
+.hero:before{content:"";position:absolute;z-index:-1;width:280px;height:280px;border-radius:50%;left:-110px;top:-150px;background:radial-gradient(circle,#55d6d033,transparent 68%);animation:orbGlow 8s ease-in-out infinite alternate}
+@keyframes heroArrive{from{opacity:0;transform:translateY(22px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes orbGlow{to{transform:translate(55px,65px) scale(1.25);opacity:.55}}
+.globe{display:inline-block;animation:globeFloat 5s ease-in-out infinite;transform-origin:50% 55%}
+@keyframes globeFloat{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-13px) rotate(5deg)}}
+.stat{transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.stat:hover{transform:translateY(-4px);border-color:var(--cyan);background:#142747}
+.toolbar{animation:fadeUp .7s .18s both}
+.unit{animation:fadeUp .75s both}
+.unit:nth-of-type(2){animation-delay:.12s}.unit:nth-of-type(3){animation-delay:.24s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.lesson{position:relative;overflow:hidden;opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1),border-color .25s ease,box-shadow .25s ease,background .25s ease}
+.lesson:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(180deg,var(--cyan),var(--gold));transform:scaleY(0);transform-origin:bottom;transition:transform .35s ease}
+.lesson.revealed{opacity:1;transform:translateY(0)}
+.lesson:hover{box-shadow:0 14px 32px #0003}
+.lesson:hover:before{transform:scaleY(1)}
+button,.btn{transition:transform .22s ease,filter .22s ease,box-shadow .22s ease}
+button:active,.btn:active{transform:scale(.97)}
+button:hover,.btn:hover{box-shadow:0 7px 18px #0003}
+#reader{animation:readerEnter .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes readerEnter{from{opacity:0;transform:translateY(18px) scale(.99)}to{opacity:1;transform:translateY(0) scale(1)}}
+.content h3{animation:fadeUp .45s both}
+.quiz{animation:fadeUp .6s .12s both}
+#question{animation:questionIn .35s ease both}
+@keyframes questionIn{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:translateX(0)}}
+.answers button{transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.answers button:hover{transform:translateX(-4px)}
+.answers button.correct{animation:correctPop .35s ease}
+.answers button.wrong{animation:wrongNudge .3s ease}
+@keyframes correctPop{50%{transform:scale(1.035)}}
+@keyframes wrongNudge{25%{transform:translateX(4px)}75%{transform:translateX(-3px)}}
+.progress{background-size:200% 100%;animation:progressShine 3s linear infinite}
+@keyframes progressShine{to{background-position:200% 0}}
+footer{transition:color .3s ease}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+</style>
+</head>
+<body>
+<header><div class="top"><div class="brand"><div class="logo">د</div><div><h1>دراسات | تانية إعدادي</h1><small>افهم • راجع • اختبر نفسك</small></div></div><button class="ghost" id="themeBtn">☀️ وضع مريح</button></div></header>
+<main>
+<section class="hero"><div><span class="eyebrow">الفصل الدراسي الأول • 2026 / 2027</span><h2>رحلتك لفهم الجغرافيا والحضارة تبدأ من هنا</h2><p>موقع تعليمي لمراجعة الوحدتين الأولى والثانية من الدراسات الاجتماعية، بشرح مبسط ونقاط مهمة واختبارات قصيرة تساعدك تتأكد إنك فهمت.</p><div class="stats"><span class="stat"><b>2</b> وحدتان</span><span class="stat"><b>6</b> دروس</span><span class="stat"><b>اختبر</b> معلوماتك</span></div></div><div class="globe">🌍</div></section>
+<div class="toolbar"><input id="search" placeholder="ابحث عن درس أو موضوع..."><button class="ghost" onclick="showAll()">عرض كل الدروس</button></div>
+<section class="unit" data-unit="1"><div class="unit-head"><h2>🌏 الوحدة الأولى: الملامح الطبيعية لقارتي آسيا وأوروبا</h2><span class="tag">جغرافيا</span></div><div class="cards" id="unit1"></div></section>
+<section class="unit" data-unit="2"><div class="unit-head"><h2>🏛️ الوحدة الثانية: الحضارات القديمة في قارة آسيا وعلاقتها بمصر</h2><span class="tag">تاريخ</span></div><div class="cards" id="unit2"></div></section>
+<p class="empty" id="empty">لا توجد نتائج مطابقة. جرّب كلمة بحث أخرى.</p>
+<section id="reader"><div class="reader-head"><div><span class="eyebrow" id="lessonMeta"></span><h2 id="lessonTitle"></h2></div><button class="ghost" onclick="closeLesson()">✕ إغلاق الدرس</button></div><div class="content" id="lessonContent"></div><div class="quiz" id="quiz"><h3>🧠 اختبر فهمك</h3><div class="question" id="question"></div><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="progress-wrap"><div class="progress" id="progress"></div></div><p id="scoreLine" class="note">اختر الإجابة الصحيحة لتحصل على نتيجتك.</p><button class="ghost" onclick="nextQuestion()" id="nextBtn" style="display:none;margin-top:10px">السؤال التالي ←</button></div></section>
+</main>
+<footer>صُنع للمذاكرة والمراجعة • راجع كتاب المدرسة دائمًا للتأكد من التفاصيل والأمثلة.</footer>
+<script>
+const lessons=[
+{u:1,n:1,t:"موقع ومظاهر سطح قارتي آسيا وأوروبا",d:"الجغرافيا • الدرس الأول",intro:"نتعرف في هذا الدرس على موقع قارتي آسيا وأوروبا وأهم مظاهر السطح فيهما، وكيف يؤثر الموقع والتضاريس في حياة الإنسان.",sections:[
+["أولًا: الموقع الجغرافي","تقع آسيا وأوروبا في النصف الشمالي من العالم، وتشكلان معًا كتلة يابسة واسعة تُعرف باسم أوراسيا. وتطل القارتان على مسطحات مائية مهمة، مما ساعد على الاتصال والتجارة بين المناطق."],
+["ثانيًا: الموقع الفلكي","يُحدد الموقع الفلكي باستخدام دوائر العرض وخطوط الطول. ويساعدنا على فهم اختلاف المناخ وطول النهار والليل بين أجزاء القارتين."],
+["ثالثًا: مظاهر السطح","تتنوع مظاهر السطح بين الجبال والهضاب والسهول. من أمثلة الجبال: الهيمالايا في آسيا والألب في أوروبا، ومن أمثلة الهضاب: هضبة التبت، كما تنتشر السهول حول الأنهار والسواحل."],
+["أهمية الموقع والتضاريس","تؤثر في طرق النقل والتجارة، وتوزيع السكان والأنشطة الاقتصادية، كما تؤثر الجبال والسهول في المناخ والزراعة والاستقرار البشري."]],
+q:[["أي أداة تُستخدم لتحديد الموقع الفلكي؟",["دوائر العرض وخطوط الطول","أنواع الصخور","اتجاه الرياح"],0,"الموقع الفلكي يحدد بدوائر العرض وخطوط الطول."],["أين تقع جبال الهيمالايا؟",["أوروبا","آسيا","أفريقيا"],1,"تقع جبال الهيمالايا في قارة آسيا."]]},
+{u:1,n:2,t:"المعادن ومصادر الطاقة في قارتي آسيا وأوروبا",d:"الجغرافيا • الدرس الثاني",intro:"تتعرف في هذا الدرس على الموارد المعدنية ومصادر الطاقة، وأهميتها للإنسان والاقتصاد.",sections:[
+["أولًا: المعادن","المعادن موارد طبيعية تُستخرج من باطن الأرض، وتدخل في صناعات كثيرة. من أمثلتها الحديد والنحاس والبوكسيت والمنجنيز، وتختلف مناطق توزيعها من دولة إلى أخرى."],
+["ثانيًا: مصادر الطاقة","تنقسم مصادر الطاقة إلى مصادر غير متجددة مثل الفحم والبترول والغاز الطبيعي، ومصادر متجددة مثل الطاقة الشمسية وطاقة الرياح والمياه."],
+["ثالثًا: أهمية الموارد","تُستخدم المعادن في البناء والصناعة وصناعة الآلات، وتُستخدم مصادر الطاقة في تشغيل المصانع ووسائل النقل وتوليد الكهرباء."],
+["رابعًا: الاستخدام الرشيد","من المهم ترشيد استهلاك الطاقة، وإعادة تدوير المعادن، والاهتمام بمصادر الطاقة المتجددة للحد من التلوث والحفاظ على الموارد."]],
+q:[["أي مما يلي يُعد مصدرًا متجددًا للطاقة؟",["الفحم","البترول","الشمس"],2,"الطاقة الشمسية مصدر متجدد."],["أي معدن يدخل في صناعات كثيرة ويُستخدم في البناء؟",["الحديد","الملح","الخشب"],0,"الحديد من المعادن المهمة في البناء والصناعة."]]},
+{u:2,n:1,t:"نماذج للحضارات القديمة بالشرق الأدنى",d:"التاريخ • الدرس الأول",intro:"يعرض الدرس نماذج من حضارات الشرق الأدنى القديم، ومنها حضارات بلاد الرافدين وبلاد الشام، مع التعرف على مظاهر الحياة والإنجازات.",sections:[
+["عوامل قيام الحضارات","ساعد توافر المياه والتربة الخصبة وملاءمة البيئة على استقرار الإنسان وممارسة الزراعة، ثم ظهور القرى والمدن ونشأة الحضارات."],
+["حضارات بلاد الرافدين","نشأت حضارات قديمة في المنطقة الواقعة بين نهري دجلة والفرات، ومن أشهرها الحضارة السومرية والأكدية والبابلية والآشورية."],
+["مظاهر الحضارة","عرف سكان بلاد الرافدين الزراعة والري والتجارة، وظهرت الكتابة المسمارية، كما اهتموا بالتشريعات والعمارة والعلوم."],
+["بلاد الشام والفينيقيون","ازدهرت مدن ساحلية فينيقية بالتجارة والملاحة البحرية، واشتهر الفينيقيون بتطوير الأبجدية ونشرها عبر نشاطهم التجاري."]],
+q:[["بين أي نهرين قامت حضارات بلاد الرافدين؟",["النيل والفرات","دجلة والفرات","دجلة والنيل"],1,"بلاد الرافدين تعني المنطقة بين نهري دجلة والفرات."],["بماذا اشتهر الفينيقيون؟",["الملاحة والتجارة البحرية","بناء الأهرامات","تربية اللاما"],0,"اشتهر الفينيقيون بالملاحة والتجارة البحرية والأبجدية."]]},
+{u:2,n:2,t:"نماذج لحضارات بلاد اليمن القديم",d:"التاريخ • الدرس الثاني",intro:"نتعرف على حضارات اليمن القديم، وأهم عوامل ازدهارها ومظاهر الحياة فيها.",sections:[
+["موقع اليمن وأهميته","يقع اليمن في جنوب شبه الجزيرة العربية، وأتاح موقعه الإشراف على طرق تجارية بحرية وبرية مهمة."],
+["ممالك اليمن القديم","من أشهر الممالك القديمة في اليمن: معين وسبأ وحمير، وقد اختلفت فترات قوتها ومناطق نفوذها."],
+["مظاهر الحياة الاقتصادية","اعتمد السكان على الزراعة والتجارة، وساعدت طرق القوافل والموقع التجاري على ازدهار تبادل السلع."],
+["الإنجازات","من الشواهد الحضارية في اليمن القديم سد مأرب، كما استخدم سكانه خط المسند في الكتابة."]],
+q:[["أي الممالك التالية من ممالك اليمن القديم؟",["سبأ","روما","أثينا"],0,"سبأ من أشهر ممالك اليمن القديم."],["ما اسم الخط الذي استخدم في اليمن القديم؟",["المسماري","المسند","الهيروغليفي"],1,"عُرف اليمن القديم باستخدام خط المسند."]]},
+{u:2,n:3,t:"نماذج للحضارات القديمة بالشرق الأقصى",d:"التاريخ • الدرس الثالث",intro:"يركز الدرس على نماذج من حضارات الهند والصين القديمة، وبعض إنجازاتها وصلاتها التجارية.",sections:[
+["الحضارة الهندية","نشأت مراكز حضارية قديمة في وادي نهر السند، وازدهرت بها المدن والتجارة وبعض الحرف."],
+["الحضارة الصينية","ارتبطت نشأة الحضارة الصينية القديمة بأحواض الأنهار، ومنها النهر الأصفر، وبرزت بها الزراعة والصناعات والاختراعات."],
+["طرق التجارة","ساعدت طرق التجارة البرية والبحرية على انتقال السلع والأفكار بين مناطق آسيا وغيرها، ومن أشهرها طريق الحرير."],
+["أهمية التواصل الحضاري","أسهم التبادل التجاري والثقافي في انتقال المعارف والمنتجات والتأثير المتبادل بين الشعوب."]],
+q:[["بأي نهر ارتبطت بدايات الحضارة الصينية القديمة؟",["النهر الأصفر","نهر النيل","نهر دجلة"],0,"ارتبطت الحضارة الصينية القديمة بالنهر الأصفر."],["ما اسم طريق التجارة الشهير الذي ربط مناطق من آسيا؟",["طريق الحرير","طريق البخور فقط","طريق الألب"],0,"طريق الحرير من أشهر طرق التجارة القديمة."]]},
+{u:2,n:4,t:"الحضارة الإسلامية",d:"التاريخ • الدرس الرابع",intro:"نتعرف على نشأة الحضارة الإسلامية واتساعها، ومظاهر تقدمها وإسهاماتها في مختلف المجالات.",sections:[
+["نشأة الحضارة الإسلامية","قامت الحضارة الإسلامية على مبادئ الإسلام، وأسهمت قيم العلم والعمل والتسامح وتنظيم المجتمع في ازدهارها."],
+["مراحل تاريخية","مرت الدولة الإسلامية بمراحل تاريخية متعددة، منها عصر الخلفاء الراشدين ثم الدولة الأموية والدولة العباسية."],
+["مظاهر الحضارة","ازدهرت العلوم والطب والرياضيات والفلك والعمارة والأدب، وظهرت مراكز للعلم والترجمة والتعلم."],
+["التواصل الحضاري","تفاعلت الحضارة الإسلامية مع حضارات أخرى، فانتقلت المعارف وتطورت، وأسهم العلماء في حفظ المعرفة وإضافة إنجازات جديدة."]],
+q:[["أي عصر جاء بعد عصر الخلفاء الراشدين؟",["الأموي","الروماني","الفينيقي"],0,"جاء العصر الأموي بعد عصر الخلفاء الراشدين."],["أي مجال من المجالات التالية ازدهر في الحضارة الإسلامية؟",["الطب والرياضيات","الملاحة الفضائية الحديثة","الطباعة الرقمية"],0,"ازدهرت علوم كثيرة، منها الطب والرياضيات والفلك."]]}
+];
+let active=null,qi=0,score=0,answered=false;
+function card(l){return `<article class="lesson" data-search="${l.t} ${l.d}"><span class="num">الوحدة ${l.u} • ${l.d}</span><h3>${l.t}</h3><p>${l.intro}</p><button onclick="openLesson(${lessons.indexOf(l)})">ابدأ المذاكرة ←</button></article>`}
+document.getElementById('unit1').innerHTML=lessons.filter(x=>x.u===1).map(card).join('');
+document.getElementById('unit2').innerHTML=lessons.filter(x=>x.u===2).map(card).join('');
+const revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('revealed');revealObserver.unobserve(entry.target)}})},{threshold:.12});
+document.querySelectorAll('.lesson').forEach((el,i)=>{el.style.transitionDelay=(i%2)*90+'ms';revealObserver.observe(el)});
+
+function openLesson(i){active=lessons[i];qi=0;score=0;document.getElementById('reader').style.display='block';document.getElementById('lessonMeta').textContent=`الوحدة ${active.u} • ${active.d}`;document.getElementById('lessonTitle').textContent=active.t;document.getElementById('lessonContent').innerHTML=`<p class="note">${active.intro}</p>`+active.sections.map(s=>`<h3>${s[0]}</h3><p>${s[1]}</p>`).join('')+`<p class="note">💡 نصيحة: اقرأ الفكرة، ثم حاول تلخيصها بكلماتك، وبعدها أجب عن أسئلة الاختبار.</p>`;document.getElementById('reader').scrollIntoView({behavior:'smooth'});renderQ()}
+function renderQ(){answered=false;let q=active.q[qi];document.getElementById('question').textContent=`${qi+1} / ${active.q.length} — ${q[0]}`;document.getElementById('answers').innerHTML=q[1].map((a,i)=>`<button onclick="answer(${i})">${['أ','ب','ج'][i]}) ${a}</button>`).join('');document.getElementById('feedback').textContent='';document.getElementById('progress').style.width=(qi/active.q.length*100)+'%';document.getElementById('scoreLine').textContent=`إجابات صحيحة: ${score} من ${active.q.length}`;document.getElementById('nextBtn').style.display='none'}
+function answer(i){if(answered)return;answered=true;let q=active.q[qi];let bs=[...document.querySelectorAll('#answers button')];bs[q[2]].classList.add('correct');if(i===q[2]){score++;document.getElementById('feedback').textContent='إجابة صحيحة! أحسنت 👏'}else{bs[i].classList.add('wrong');document.getElementById('feedback').textContent='ليست الإجابة الصحيحة. '+q[3]}document.getElementById('scoreLine').textContent=`إجابات صحيحة: ${score} من ${active.q.length}`;document.getElementById('progress').style.width=((qi+1)/active.q.length*100)+'%';document.getElementById('nextBtn').style.display='inline-block';document.getElementById('nextBtn').textContent=qi===active.q.length-1?'عرض النتيجة':'السؤال التالي ←'}
+function nextQuestion(){if(!answered)return;if(qi<active.q.length-1){qi++;renderQ()}else{document.getElementById('question').textContent=`انتهى الاختبار! نتيجتك ${score} من ${active.q.length}`;document.getElementById('answers').innerHTML='';document.getElementById('feedback').textContent=score===active.q.length?'ممتاز! كل إجاباتك صحيحة 🎉':'راجع نقاط الدرس وحاول مرة أخرى. بالتوفيق!';document.getElementById('nextBtn').style.display='none'}}
+function closeLesson(){document.getElementById('reader').style.display='none'}
+function showAll(){document.getElementById('search').value='';filterCards()}
+function filterCards(){let v=document.getElementById('search').value.trim().toLowerCase(),shown=0;document.querySelectorAll('.lesson').forEach(c=>{let yes=c.dataset.search.toLowerCase().includes(v);c.style.display=yes?'':'none';if(yes){shown++;if(!c.classList.contains('revealed'))revealObserver.observe(c)}});document.querySelectorAll('.unit').forEach(u=>u.style.display=[...u.querySelectorAll('.lesson')].some(c=>c.style.display!=='none')?'':'none');document.getElementById('empty').style.display=shown?'none':'block'}
+document.getElementById('search').addEventListener('input',filterCards);
+document.getElementById('themeBtn').addEventListener('click',()=>{let light=document.body.classList.toggle('light');document.getElementById('themeBtn').textContent=light?'🌙 الوضع الداكن':'☀️ وضع مريح';document.body.style.background=light?'#edf2fa':'radial-gradient(ellipse at 85% 0%,#1a315a 0,transparent 35%),#0b1224';document.body.style.color=light?'#14213a':'#f4f7ff';document.querySelectorAll('.lesson,#reader,.hero,.quiz').forEach(x=>{if(light){x.style.background='#fff';x.style.color='#14213a';x.style.borderColor='#ccd7e8'}else{x.style.background='';x.style.color='';x.style.borderColor='' }})});
+</script>
+</body>
+</html>
